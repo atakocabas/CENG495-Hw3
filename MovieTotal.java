@@ -17,10 +17,12 @@ public class MovieTotal {
     public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable>{
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException{
             try {
-                String str[] = value.toString().split("\t", -3);
+                String str[] = (value.toString()).split(",");
                 String name = str[0];
                 String time = str[-1];
-                context.write(new Text(name), new IntWritable(Integer.parseInt(time.toString())));
+                if(!time.equals("duration")) {
+                    context.write(new Text(name), new IntWritable(Integer.parseInt(time.toString())));
+                }
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());
             }

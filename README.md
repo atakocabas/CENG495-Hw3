@@ -1,15 +1,5 @@
 #CENG495 - HW3
 
-## CSV to TSV
-
-Python script that converts .csv file to .tsv file to make life little bit easier.
-
-### USAGE
-```
-$ pyhton3 script.py
-$ Enter the path of the input.
-```
-
 ## Compilation
 
 ```
@@ -19,5 +9,9 @@ $ jar cf Hw3.jar *.class
 
 ## RUN
 ```
-hadoop jar Hw3.jar Hw3 total <input.tsv> <output_folder_name>
+$ hadoop jar Hw3.jar Hw3 total <input.csv> output_total
+$ hadoop jar Hw3.jar Hw3 total <input.csv> output_average
+$ hadoop jar Hw3.jar Hw3 total <input.csv> output_employment
+$ hadoop jar Hw3.jar Hw3 total <input.csv> output_ratescore
+
 ```
